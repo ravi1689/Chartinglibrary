@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import ChartComponent from './components/ChartComponent';
+import TimeframeSelector from './components/TimeframeSelector';
 
-function App() {
+const App = () => {
+  const [timeframe, setTimeframe] = useState('daily');
+
+  const handleTimeframeChange = (selectedTimeframe) => {
+    setTimeframe(selectedTimeframe);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{background:'lightblue', textAlign:'center', width:'100%'}}>
+      <h1>React Chart with Zoom</h1>
+      <TimeframeSelector onSelect={handleTimeframeChange} timeframe={timeframe} />
+      <ChartComponent timeframe={timeframe} setTimeframe={setTimeframe} />
     </div>
   );
-}
+};
 
 export default App;
