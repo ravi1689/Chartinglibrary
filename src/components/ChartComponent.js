@@ -139,7 +139,7 @@ const ChartComponent = ({ timeframe, setTimeframe }) => {
     }));
   };
 
-  const { left, right, refAreaLeft, refAreaRight, top, bottom, top2, bottom2 } =
+  const { left, right, refAreaLeft, refAreaRight, top, bottom } =
     state;
 
   return (
@@ -218,7 +218,7 @@ const ChartComponent = ({ timeframe, setTimeframe }) => {
 
 class CustomizedAxisTick extends PureComponent {
   render() {
-    const { x, y, stroke, payload } = this.props;
+    const { x, y, payload } = this.props;
 
 
     return (
@@ -231,7 +231,7 @@ class CustomizedAxisTick extends PureComponent {
   }
 }
 
-class CustomLabel extends PureComponent {
+  export class CustomLabel extends PureComponent {
   render() {
     const { x, y, stroke, value } = this.props;
 
